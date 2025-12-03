@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NowAuraa — Blog Post</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F6FFF5; /* light green */
+      color: #2E4A33;
+    }
+
+    /* Header */
+    header {
+      background-color: #BFECC0; /* soft light mint */
+      padding: 15px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #2E4A33;
+      letter-spacing: 0.05em;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 0.8em;
+      letter-spacing: 0.08em;
+      text-transform: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2E4A33;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Blog Container */
+    .blog-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #FFFFFF;
+      padding: 40px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .blog-title {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #2E4A33;
+    }
+
+    .blog-meta {
+      text-align: center;
+      font-size: 0.9em;
+      color: #6A8B6F;
+      margin-bottom: 25px;
+    }
+
+    .blog-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .blog-content p {
+      font-size: 1.05em;
+      line-height: 1.8;
+      color: #3D5A40;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      background-color: #E7FCE7;
+      padding: 18px 25px;
+      border-radius: 12px;
+      border-left: 5px solid #8BCF91;
+      margin: 30px 0;
+      font-style: italic;
+      color: #2E4A33;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      padding: 10px 20px;
+      background-color: #8BCF91;
+      color: white;
+      border-radius: 22px;
+      transition: 0.3s;
+    }
+
+    .back-link:hover {
+      background-color: #2E4A33;
+    }
+
+    footer {
+      background-color: #BFECC0;
+      padding: 15px 0;
+      text-align: center;
+      margin-top: 60px;
+      color: #2E4A33;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      NowAuraa
+      <span>soft skin · strong energy · real glow</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Read Blog</a></li>
+        <li><a href="#">Routines</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- BLOG CONTENT -->
+  <div class="blog-container">
+
+    <h1 class="blog-title">Night Routine for Dewy, Soft Skin</h1>
+    <div class="blog-meta">8 min read • Written by Nowshin • Glow Journal</div>
+
+    <img class="blog-img" src="https://images.pexels.com/photos/3738349/pexels-photo-3738349.jpeg">
+
+    <div class="blog-content">
+
+      <p>
+        Skincare shouldn’t feel like a chore — it should feel like a calming moment between you and your skin.  
+        A little ritual where your hands slow down, your breathing softens, and your mind resets.  
+      </p>
+
+      <p>
+        This night routine is the exact one that started my glow journey, long before NowAuraa existed.  
+        I used to scrub my skin, overload it with actives, and then wonder why I felt irritated — inside and out.  
+      </p>
+
+      <div class="quote-box">
+        “Your glow isn’t something you chase —  
+        it’s something you build softly, slowly, with intention.”
+      </div>
+
+      <p>
+        When I created NowAuraa, I wanted a space where skincare could feel soft, intentional, and empowering —  
+        not overwhelming or confusing. This night routine represents the heart of that:  
+        hydration, simplicity, and gentle consistency.
+      </p>
+
+      <p>
+        I always begin by melting the day away with a gentle cleanser that doesn’t strip my skin.  
+        Then comes my holy grail: a soothing toner that feels like cool water mixed with peace.  
+        After that, I layer hydrating essences and a barrier-repairing moisturizer that leaves a silky glow.
+      </p>
+
+      <p>
+        This routine isn’t about perfection.  
+        It’s about showing up for your skin in a way that feels good to you.  
+      </p>
+
+    </div>
+
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 NowAuraa Skincare • Soft Skin, Strong Energy
+  </footer>
+
+</body>
+</html>
