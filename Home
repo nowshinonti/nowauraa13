@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NowAuraa Skincare Blog</title>
+
+  <style>
+    /* ===============================
+       NowAuraa – Light Green Theme
+       =============================== */
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F6FBF5; /* very light green */
+      color: #264331; /* deep green */
+    }
+
+    /* Header */
+    header {
+      background-color: #CDEFD2; /* light mint green */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #264331;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 0.8em;
+      font-weight: 500;
+      margin-top: 3px;
+      letter-spacing: 0.08em;
+      text-transform: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #264331;
+      font-weight: 500;
+      font-size: 0.95em;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 auto 25px;
+      font-size: 1.05em;
+      color: #5D7A66;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      background-color: #8BD39A; /* fresh light green */
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background-color: #264331;
+      transform: translateY(-2px);
+    }
+
+    /* Blog Section */
+    .section {
+      background-color: #E5F7E8; /* pale soft green */
+      padding: 50px 20px 60px;
+      border-radius: 16px;
+      margin: 0 auto 40px;
+      max-width: 1100px;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #264331;
+    }
+
+    .section-intro {
+      text-align: center;
+      color: #5D7A66;
+      max-width: 750px;
+      margin: 0 auto 30px;
+      font-size: 0.98em;
+      line-height: 1.6;
+    }
+
+    .blogs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #ffffff;
+      width: 260px;
+      border-radius: 14px;
+      padding: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 8px 0;
+      color: #264331;
+      font-size: 1.05em;
+    }
+
+    .card p {
+      color: #5D7A66;
+      font-size: 0.9em;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    .btn-secondary {
+      background-color: #8BD39A;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 22px;
+      text-decoration: none;
+      font-size: 0.9em;
+      font-weight: 500;
+      transition: background-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      background-color: #264331;
+      transform: translateY(-2px);
+    }
+
+    /* Founder / About Section (with briefing) */
+    .founder {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 50px 20px;
+      border-radius: 16px;
+      background-color: #F0FBF2; /* very soft green-white */
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .founder h3 {
+      font-size: 1.5em;
+      margin-bottom: 8px;
+      color: #264331;
+    }
+
+    .founder-role {
+      text-transform: uppercase;
+      font-size: 0.9em;
+      color: #6C8A73;
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+    }
+
+    .founder p {
+      max-width: 720px;
+      margin: 0 auto 14px;
+      color: #5D7A66;
+      line-height: 1.7;
+      font-size: 0.97em;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #CDEFD2;
+      padding: 15px 0;
+      text-align: center;
+      color: #264331;
+      font-size: 0.9em;
+      border-top: 2px solid #F6FBF5;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 12px 20px;
+      }
+
+      nav ul {
+        gap: 15px;
+      }
+
+      .section {
+        margin: 0 10px 30px;
+        padding: 40px 15px 45px;
+      }
+
+      .blogs {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+        max-width: 380px;
+      }
+
+      .founder {
+        margin: 0 10px 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      NowAuraa
+      <span>soft skin · light energy · real glow</span>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Routines</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Glow With Intention. Live With Soft Power.</h1>
+    <p>
+      NowAuraa blends mindful skincare, wellness rituals, and self-belief —
+      helping you rise into your aura, one gentle routine at a time.
+    </p>
+    <a href="#latest" class="btn-primary">Explore Latest Posts</a>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="section" id="latest">
+    <h2>Latest From the Glow Journal</h2>
+    <p class="section-intro">
+      Little stories, routines, and reflections designed to make skincare feel
+      softer, lighter, and more like you.
+    </p>
+
+    <div class="blogs">
+      <!-- Blog 1 -->
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738349/pexels-photo-3738349.jpeg" alt="Night skincare routine">
+        <h3>Night Routine for Dewy, Soft Skin</h3>
+        <p>
+          A calming PM ritual focused on barrier repair, deep hydration, and
+          ending your day with intention.
+        </p>
+        <a href="#" class="btn-secondary">Read More</a>
+      </div>
+
+      <!-- Blog 2 -->
+      <div class="card">
+        <img src="https://www.beverlyfischer.net/wp-content/uploads/2025/08/glowing-skin-skincare-routine-scaled.jpg">
+        
+        <h3>Soft Morning Glow Routine</h3>
+        <p>
+          A light, everyday routine to wake up your skin, protect it, and make
+          you feel fresh — even on busy days.
+        </p>
+        <a href="#" class="btn-secondary">Read More</a>
+      </div>
+
+      <!-- Blog 3 -->
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3738343/pexels-photo-3738343.jpeg" alt="Acne healing skincare">
+        <h3>Healing Acne the Gentle Way</h3>
+        <p>
+          No harsh burning or 10-step chaos — just slow, kind skincare that lets
+          your skin and confidence recover together.
+        </p>
+        <a href="#" class="btn-secondary">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Briefing / About -->
+  <section class="founder">
+    <h3>From the Founder – How NowAuraa Was Born</h3>
+    <div class="founder-role">Creator · Skin Enthusiast · Soft Life Storyteller</div>
+
+    <p>
+      NowAuraa started as a simple idea in my notes app: 
+      <em>“What if skincare could feel like a calm page instead of a loud ad?”</em>
+      I was constantly sharing routines, product tips, and little mindset shifts with friends,
+      and I wanted one soft, cozy place to put it all.
+    </p>
+
+    <p>
+     
+      through a calm journal instead of a crowded store shelf.
+    </p>
+
+    <p>
+      I created NowAuraa for anyone who’s ever felt confused, pressured, or not “perfect enough”
+      in the skincare world. Here, your glow doesn’t have to be instant or flawless — it just has
+      to feel honest and yours.
+    </p>
+
+    <p>
+      Every section of this page was designed with that in mind: a hero to ground you, blogs that
+      feel like conversations, and colors that remind you to breathe. This is your soft corner
+      of the internet. Welcome to NowAuraa. 💚
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 NowAuraa Skincare • Light Skin, Strong Energy</p>
+  </footer>
+
+</body>
+</html>
