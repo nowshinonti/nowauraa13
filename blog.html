@@ -1,84 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NowAuraa Glow Guide – Morning, Night & Acne</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NowAuraa – Glow Guide Routines</title>
 
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    /* ===== Global Reset ===== */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #F5FFF7;
-      color: #264333;
+    }
+
+    /* ===== Base ===== */
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont,
+        sans-serif;
+      background: #ffffff; /* white background like you asked */
+      color: #22352a;
+      line-height: 1.6;
     }
 
     a {
       color: inherit;
     }
 
-    /* Header */
+    .wrapper {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ===== Header & Nav (same as new index/blog/products) ===== */
     header {
-      background-color: #BFEFD0;
+      background: rgba(213, 231, 221, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(143, 173, 156, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 16px 60px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      justify-content: space-between;
+      padding: 14px 0;
     }
 
-    .logo {
-      font-size: 1.5em;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .logo span {
-      display: block;
-      font-size: 0.8em;
-      font-weight: 500;
-      margin-top: 3px;
-    }
-
-    nav ul {
-      list-style: none;
+    .logo-block {
       display: flex;
-      gap: 24px;
-      margin: 0;
-      padding: 0;
+      flex-direction: column;
     }
 
-    nav a {
+    .logo-main {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      font-size: 0.8rem;
+      color: #516b5a;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: 500;
-      font-size: 0.96em;
-      transition: opacity 0.2s;
+      color: #23382c;
+      transition: background 0.2s, transform 0.1s;
     }
 
-    nav a:hover {
-      opacity: 0.7;
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-1px);
     }
 
-    /* Hero */
+    .nav-link.active {
+      background: #89b89a;
+      color: #0e1913;
+      font-weight: 600;
+    }
+
+    /* ===== Hero (match style from new index/blog) ===== */
     .hero {
+      margin: 26px 0 20px;
+      padding: 40px 22px 34px;
+      border-radius: 22px;
+      background: #f3faf4;
+      box-shadow: 0 12px 32px rgba(50, 80, 60, 0.06);
       text-align: center;
-      padding: 60px 20px 40px;
+    }
+
+    .hero-pill {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      color: #6c8a75;
+      display: inline-block;
+      background: rgba(225, 242, 232, 0.9);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 10px;
     }
 
     .hero h1 {
-      font-size: 2.2em;
+      font-size: 2.1rem;
       margin-bottom: 10px;
     }
 
     .hero p {
       max-width: 750px;
-      margin: 0 auto 25px;
-      color: #4E6C5C;
+      margin: 0 auto 18px;
+      color: #4e6c5c;
       line-height: 1.7;
-      font-size: 1.02em;
+      font-size: 0.98rem;
     }
 
     .pill-nav {
@@ -86,27 +131,28 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin-bottom: 10px;
+      margin-top: 8px;
     }
 
     .pill-nav a {
       display: inline-block;
       padding: 8px 18px;
       border-radius: 999px;
-      background-color: #E4F9EB;
+      background-color: #e4f9eb;
       text-decoration: none;
-      font-size: 0.9em;
+      font-size: 0.9rem;
       font-weight: 500;
       color: #264333;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, color 0.2s, transform 0.1s;
     }
 
     .pill-nav a:hover {
-      background-color: #8AD9A4;
+      background-color: #8ad9a4;
       color: #ffffff;
+      transform: translateY(-1px);
     }
 
-    /* Article Sections */
+    /* ===== Routine Articles ===== */
     .article-wrapper {
       max-width: 900px;
       margin: 0 auto 60px;
@@ -114,42 +160,43 @@
     }
 
     .article {
-      background-color: #E4F9EB;
+      background-color: #e4f9eb;
       padding: 26px 22px 26px;
       border-radius: 18px;
       margin-bottom: 22px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
 
     .article h2 {
       margin-top: 0;
       margin-bottom: 5px;
+      font-size: 1.35rem;
     }
 
     .article h3 {
       margin-bottom: 8px;
       margin-top: 18px;
-      font-size: 1.02em;
+      font-size: 1.02rem;
     }
 
     .article-tagline {
-      font-size: 0.9em;
-      color: #67836F;
+      font-size: 0.9rem;
+      color: #67836f;
       margin-bottom: 14px;
     }
 
     .article p {
-      color: #4E6C5C;
+      color: #4e6c5c;
       line-height: 1.7;
-      font-size: 0.97em;
+      font-size: 0.95rem;
       margin-bottom: 10px;
     }
 
     .article ul {
       padding-left: 18px;
       margin: 8px 0 12px;
-      color: #4E6C5C;
-      font-size: 0.96em;
+      color: #4e6c5c;
+      font-size: 0.94rem;
     }
 
     .article li {
@@ -157,41 +204,40 @@
     }
 
     .tip-box {
-      background-color: #F5FFF7;
-      border-left: 4px solid #8AD9A4;
+      background-color: #f5fff7;
+      border-left: 4px solid #8ad9a4;
       padding: 10px 12px;
       border-radius: 10px;
-      font-size: 0.9em;
+      font-size: 0.9rem;
       margin-top: 8px;
     }
 
     .tip-label {
       font-weight: 600;
       text-transform: uppercase;
-      font-size: 0.78em;
+      font-size: 0.78rem;
       letter-spacing: 0.08em;
-      color: #67836F;
+      color: #67836f;
       display: block;
       margin-bottom: 4px;
     }
 
-    /* Footer */
+    /* ===== Footer (same style family) ===== */
     footer {
-      background-color: #BFEFD0;
+      border-top: 1px solid rgba(155, 183, 162, 0.3);
+      background: rgba(228, 240, 231, 0.9);
+      padding: 14px 0 20px;
       text-align: center;
-      padding: 14px 0;
-      font-size: 0.9em;
+      font-size: 0.85rem;
       color: #264333;
     }
 
+    /* ===== Responsive ===== */
     @media (max-width: 768px) {
-      header {
-        padding: 14px 18px;
+      .hero {
+        padding: 30px 18px 26px;
       }
-      nav ul {
-        gap: 14px;
-        font-size: 0.9em;
-      }
+
       .article-wrapper {
         padding: 0 14px 40px;
       }
@@ -199,131 +245,200 @@
   </style>
 </head>
 <body>
-
-  <!-- Header -->
+  <!-- Header: EXACT same layout as new index page -->
   <header>
-    <div class="logo">
-      NowAuraa
-      <span>Glow Guide</span>
-    </div>
-    <nav class="main-nav">
-  <a href="index.html" class="nav-link">Home</a>
-  <a href="blog.html" class="nav-link">Blog</a>
-  <a href="routines.html" class="nav-link">Routines</a>
-  <a href="products.html" class="nav-link">Products</a>
-</nav>
+    <div class="wrapper header-inner">
+      <div class="logo-block">
+        <span class="logo-main">NowAuraa</span>
+        <span class="logo-sub">soft skin · light energy · real glow</span>
+      </div>
 
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="routines.html" class="nav-link active">Routines</a>
+        <a href="products.html" class="nav-link">Products</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>The NowAuraa Glow Guide</h1>
-    <p>
-      This page is the heart of NowAuraa — your full breakdown of the three
-      core routines: Morning Glow, Night Calm, and Gentle Acne Healing. All
-      in one place, so you never feel lost again.
-    </p>
+  <main class="wrapper">
+    <!-- Hero -->
+    <section class="hero">
+      <span class="hero-pill">Glow guide</span>
+      <h1>The NowAuraa Glow Guide</h1>
+      <p>
+        Your core routines in one calm place: Morning Glow, Night Calm,
+        and Gentle Acne Healing — so you always know what to reach for.
+      </p>
 
-    <div class="pill-nav">
-      <a href="#morning">Morning Routine</a>
-      <a href="#night">Night Routine</a>
-      <a href="#acne">Acne Routine</a>
+      <div class="pill-nav">
+        <a href="#morning">Morning Routine</a>
+        <a href="#night">Night Routine</a>
+        <a href="#acne">Acne Routine</a>
+      </div>
+    </section>
+
+    <!-- Routines -->
+    <div class="article-wrapper">
+      <!-- Morning Routine -->
+      <section class="article" id="morning">
+        <h2>Soft Morning Glow Routine</h2>
+        <div class="article-tagline">
+          for days when you want to look awake, even if you’re not
+        </div>
+
+        <p>
+          Your morning routine doesn’t have to be 10 steps to be effective. The
+          goal is to gently wake up the skin, protect it, and give you a soft,
+          natural glow that sits beautifully under makeup or on no-makeup days.
+        </p>
+
+        <h3>Step-by-step</h3>
+        <ul>
+          <li>
+            <strong>1. Gentle Cleanse (optional)</strong> – If your skin feels
+            oily or sweaty, use a mild cleanser. If not, a splash of lukewarm
+            water is enough.
+          </li>
+          <li>
+            <strong>2. Hydrating Toner or Essence</strong> – Something light
+            that gives your skin a drink without feeling sticky.
+          </li>
+          <li>
+            <strong>3. Vitamin C (or brightening serum)</strong> – Helps even
+            tone and boost glow over time.
+          </li>
+          <li>
+            <strong>4. Lightweight Moisturizer</strong> – Choose gel or cream
+            depending on your skin type.
+          </li>
+          <li>
+            <strong>5. SPF (non-negotiable)</strong> – The step that protects
+            your work: at least SPF 30, every day.
+          </li>
+        </ul>
+
+        <div class="tip-box">
+          <span class="tip-label">Soft Aura Tip</span>
+          If you wear makeup, let your sunscreen sit for a few minutes before
+          applying your base. This helps everything layer smoother and last
+          longer.
+        </div>
+      </section>
+
+      <!-- Night Routine -->
+      <section class="article" id="night">
+        <h2>Night Routine for Dewy, Calm Skin</h2>
+        <div class="article-tagline">
+          for repairing your barrier and unwinding your mind
+        </div>
+
+        <p>
+          Nighttime is when your skin finally gets to rest and repair. This
+          routine focuses on removing the day gently, adding back hydration, and
+          giving your barrier everything it needs to reset.
+        </p>
+
+        <h3>Step-by-step</h3>
+        <ul>
+          <li>
+            <strong>1. First Cleanse (if you wore sunscreen/makeup)</strong> –
+            Use a cleansing balm or oil to melt everything off.
+          </li>
+          <li>
+            <strong>2. Second Cleanse</strong> – A gentle, low-foam cleanser to
+            remove residue without stripping.
+          </li>
+          <li>
+            <strong>3. Hydrating Layer</strong> – Toner, mist, or essence to add
+            water back into the skin.
+          </li>
+          <li>
+            <strong>4. Treatment (only 2–3 nights a week)</strong> – This is
+            where you can add retinol, exfoliating serum, or any active — but
+            not all at once.
+          </li>
+          <li>
+            <strong>5. Barrier-Friendly Moisturizer</strong> – A cream that
+            feels like a hug for your skin.
+          </li>
+          <li>
+            <strong>6. Optional Oil</strong> – For extra dry nights, seal
+            everything in with a few drops of facial oil.
+          </li>
+        </ul>
+
+        <div class="tip-box">
+          <span class="tip-label">Soft Aura Tip</span>
+          Make this routine a ritual: dim lights, soft playlist, maybe a candle.
+          Your nervous system will associate skincare with calm, not just
+          “getting ready for bed.”
+        </div>
+      </section>
+
+      <!-- Acne Routine -->
+      <section class="article" id="acne">
+        <h2>Healing Acne the Gentle Way</h2>
+        <div class="article-tagline">
+          for acne-prone skin that’s tired of being burned and bullied
+        </div>
+
+        <p>
+          Acne isn’t a sign that you’re doing everything wrong. It’s your skin
+          asking for support, not punishment. This routine is about calming
+          inflammation and slowly building back trust with your skin.
+        </p>
+
+        <h3>Core Principles</h3>
+        <ul>
+          <li>
+            Keep your routine <strong>simple</strong> – too many actives can
+            make breakouts worse.
+          </li>
+          <li>
+            Focus on <strong>calming + hydrating</strong> instead of
+            over-drying.
+          </li>
+          <li>
+            Introduce any strong product (like retinoids or BHA)
+            <strong>slowly</strong>.
+          </li>
+        </ul>
+
+        <h3>Suggested Routine</h3>
+        <ul>
+          <li>
+            <strong>1. Gentle Cleanser</strong> – No harsh scrubs, no strong
+            fragrances.
+          </li>
+          <li>
+            <strong>2. Soothing Toner or Serum</strong> – Look for ingredients
+            like centella, green tea, panthenol, or niacinamide.
+          </li>
+          <li>
+            <strong>3. Targeted Spot Treatment</strong> – Only on active
+            breakouts, not all over your face.
+          </li>
+          <li>
+            <strong>4. Lightweight Moisturizer</strong> – Yes, even oily /
+            acne-prone skin needs moisture.
+          </li>
+          <li>
+            <strong>5. (Night Only) Gentle Active</strong> – A BHA or retinoid a
+            few nights per week, depending on how sensitive you are.
+          </li>
+        </ul>
+
+        <div class="tip-box">
+          <span class="tip-label">Soft Aura Tip</span>
+          Track your skin like a journal — note what you used, how your skin
+          felt, and what else was happening in your life (stress, sleep,
+          cycle). Patterns will show up, and you’ll feel more in control.
+        </div>
+      </section>
     </div>
-  </section>
-
-  <div class="article-wrapper">
-
-    <!-- Morning Routine -->
-    <section class="article" id="morning">
-      <h2>Soft Morning Glow Routine</h2>
-      <div class="article-tagline">for days when you want to look awake, even if you’re not</div>
-
-      <p>
-        Your morning routine doesn’t have to be 10 steps to be effective. The goal is to
-        gently wake up the skin, protect it, and give you a soft, natural glow that sits
-        beautifully under makeup or on no-makeup days.
-      </p>
-
-      <h3>Step-by-step</h3>
-      <ul>
-        <li><strong>1. Gentle Cleanse (optional)</strong> – If your skin feels oily or sweaty, use a mild cleanser. If not, a splash of lukewarm water is enough.</li>
-        <li><strong>2. Hydrating Toner or Essence</strong> – Something light that gives your skin a drink without feeling sticky.</li>
-        <li><strong>3. Vitamin C (or brightening serum)</strong> – Helps even tone and boost glow over time.</li>
-        <li><strong>4. Lightweight Moisturizer</strong> – Choose gel or cream depending on your skin type.</li>
-        <li><strong>5. SPF (non-negotiable)</strong> – The step that protects your work: at least SPF 30, every day.</li>
-      </ul>
-
-      <div class="tip-box">
-        <span class="tip-label">Soft Aura Tip</span>
-        If you wear makeup, let your sunscreen sit for a few minutes before applying your base.
-        This helps everything layer smoother and last longer.
-      </div>
-    </section>
-
-    <!-- Night Routine -->
-    <section class="article" id="night">
-      <h2>Night Routine for Dewy, Calm Skin</h2>
-      <div class="article-tagline">for repairing your barrier and unwinding your mind</div>
-
-      <p>
-        Nighttime is when your skin finally gets to rest and repair. This routine
-        focuses on removing the day gently, adding back hydration, and giving your
-        barrier everything it needs to reset.
-      </p>
-
-      <h3>Step-by-step</h3>
-      <ul>
-        <li><strong>1. First Cleanse (if you wore sunscreen/makeup)</strong> – Use a cleansing balm or oil to melt everything off.</li>
-        <li><strong>2. Second Cleanse</strong> – A gentle, low-foam cleanser to remove residue without stripping.</li>
-        <li><strong>3. Hydrating Layer</strong> – Toner, mist, or essence to add water back into the skin.</li>
-        <li><strong>4. Treatment (only 2–3 nights a week)</strong> – This is where you can add retinol, exfoliating serum, or any active — but not all at once.</li>
-        <li><strong>5. Barrier-Friendly Moisturizer</strong> – A cream that feels like a hug for your skin.</li>
-        <li><strong>6. Optional Oil</strong> – For extra dry nights, seal everything in with a few drops of facial oil.</li>
-      </ul>
-
-      <div class="tip-box">
-        <span class="tip-label">Soft Aura Tip</span>
-        Make this routine a ritual: dim lights, soft playlist, maybe a candle. Your nervous
-        system will associate skincare with calm, not just “getting ready for bed.”
-      </div>
-    </section>
-
-    <!-- Acne Routine -->
-    <section class="article" id="acne">
-      <h2>Healing Acne the Gentle Way</h2>
-      <div class="article-tagline">for acne-prone skin that’s tired of being burned and bullied</div>
-
-      <p>
-        Acne isn’t a sign that you’re doing everything wrong. It’s your skin asking
-        for support, not punishment. This routine is about calming inflammation and
-        slowly building back trust with your skin.
-      </p>
-
-      <h3>Core Principles</h3>
-      <ul>
-        <li>Keep your routine <strong>simple</strong> – too many actives can make breakouts worse.</li>
-        <li>Focus on <strong>calming + hydrating</strong> instead of over-drying.</li>
-        <li>Introduce any strong product (like retinoids or BHA) <strong>slowly</strong>.</li>
-      </ul>
-
-      <h3>Suggested Routine</h3>
-      <ul>
-        <li><strong>1. Gentle Cleanser</strong> – No harsh scrubs, no strong fragrances.</li>
-        <li><strong>2. Soothing Toner or Serum</strong> – Look for ingredients like centella, green tea, panthenol, or niacinamide.</li>
-        <li><strong>3. Targeted Spot Treatment</strong> – Only on active breakouts, not all over your face.</li>
-        <li><strong>4. Lightweight Moisturizer</strong> – Yes, even oily/acne-prone skin needs moisture.</li>
-        <li><strong>5. (Night Only) Gentle Active</strong> – A BHA or retinoid a few nights per week, depending on how sensitive you are.</li>
-      </ul>
-
-      <div class="tip-box">
-        <span class="tip-label">Soft Aura Tip</span>
-        Track your skin like a journal — note what you used, how your skin felt, and what
-        else was happening in your life (stress, sleep, cycle). Patterns will show up,
-        and you’ll feel more in control.
-      </div>
-    </section>
-
-  </div>
+  </main>
 
   <footer>
     © 2025 NowAuraa • Your Glow, Your Pace
