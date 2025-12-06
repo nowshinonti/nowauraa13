@@ -5,21 +5,24 @@
   <meta charset="UTF-8">
   <title>NowAuraa – Routines</title>
 
-  <style>
-      <style>
-    /* ===== Reset ===== */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+   /* ===== Global Reset ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    html, body { margin: 0; padding: 0; }
-
+    /* ===== Base ===== */
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top left, #E8F3EB, #F8FBF9);
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #FFFFFF; /* white background */
       color: #22352A;
       line-height: 1.6;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      color: inherit;
+    }
 
     .wrapper {
       width: 90%;
@@ -27,46 +30,52 @@
       margin: 0 auto;
     }
 
-    /* ===================== HEADER ===================== */
+    /* ===== Header & Nav (same style family as Blog/Products) ===== */
     header {
       background: rgba(213, 231, 221, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(143, 173, 156, 0.3);
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 20;
     }
 
     .header-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 14px 0;
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
     }
 
     .logo-main {
       font-size: 1.7rem;
       font-weight: 700;
+      letter-spacing: 1px;
     }
 
     .logo-sub {
       font-size: 0.8rem;
       color: #516B5A;
-      margin-top: 2px;
     }
 
     nav {
       display: flex;
-      gap: 14px;   /* Tighter spacing like your index page */
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .nav-link {
+      font-size: 0.9rem;
       padding: 6px 12px;
       border-radius: 999px;
-      font-size: 0.9rem;
-      transition: 0.2s;
+      text-decoration: none;
       color: #23382C;
+      transition: background 0.2s, transform 0.1s;
     }
 
     .nav-link:hover {
@@ -74,155 +83,184 @@
       transform: translateY(-1px);
     }
 
-    .active {
+    .nav-link.active {
       background: #89B89A;
+      color: #0E1913;
       font-weight: 600;
     }
 
-    /* ===================== HERO ===================== */
+    /* ===== Hero (Glow Guide) ===== */
     .hero {
-      margin: 26px 0 24px;
-      padding: 26px;
-      background: linear-gradient(135deg, #E8F3EB, #F9FFF9);
+      margin: 26px 0 20px;
+      padding: 40px 22px 34px;
       border-radius: 22px;
-      box-shadow: 0 10px 26px rgba(50, 80, 60, 0.1);
+      background: #F3FAF4;
+      box-shadow: 0 12px 32px rgba(50, 80, 60, 0.06);
+      text-align: center;
     }
 
     .hero-pill {
-      display: inline-block;
-      padding: 5px 14px;
-      background: rgba(225,242,232,0.9);
-      font-size: 0.75rem;
-      letter-spacing: 1.6px;
-      border-radius: 999px;
-      color: #6C8A75;
-      margin-bottom: 8px;
+      font-size: 0.78rem;
       text-transform: uppercase;
-    }
-
-    h1 { font-size: 2rem; margin-bottom: 6px; }
-
-    .hero-actions {
-      margin-top: 14px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .btn {
-      padding: 9px 16px;
+      letter-spacing: 1.6px;
+      color: #6C8A75;
+      display: inline-block;
+      background: rgba(225, 242, 232, 0.9);
+      padding: 5px 14px;
       border-radius: 999px;
-      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: 0 auto 18px;
+      color: #4E6C5C;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .pill-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .pill-nav a {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background-color: #E4F9EB;
       text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: 0.2s;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #264333;
+      transition: background-color 0.2s, color 0.2s, transform 0.1s;
     }
 
-    .btn-primary {
-      background: #89B89A;
-      color: #0E1913;
-    }
-    .btn-primary:hover { background: #7AA78C; }
-
-    /* ===================== SECTIONS ===================== */
-    .section-header {
-      margin: 24px 0 12px;
+    .pill-nav a:hover {
+      background-color: #8AD9A4;
+      color: #FFFFFF;
+      transform: translateY(-1px);
     }
 
-    .section-header h2 {
-      font-size: 1.4rem;
+    /* ===== Routine Articles ===== */
+    .article-wrapper {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 20px 40px;
+    }
+
+    .article {
+      background-color: #E4F9EB;
+      padding: 26px 22px 26px;
+      border-radius: 18px;
+      margin-bottom: 22px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .article h2 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 1.35rem;
+    }
+
+    .article h3 {
+      margin-bottom: 8px;
+      margin-top: 18px;
+      font-size: 1.02rem;
+    }
+
+    .article-tagline {
+      font-size: 0.9rem;
+      color: #67836F;
+      margin-bottom: 14px;
+    }
+
+    .article p {
+      color: #4E6C5C;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .article ul {
+      padding-left: 18px;
+      margin: 8px 0 12px;
+      color: #4E6C5C;
+      font-size: 0.94rem;
+    }
+
+    .article li {
+      margin-bottom: 5px;
+    }
+
+    .tip-box {
+      background-color: #F5FFF7;
+      border-left: 4px solid #8AD9A4;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      margin-top: 8px;
+    }
+
+    .tip-label {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: #67836F;
+      display: block;
       margin-bottom: 4px;
     }
 
-    .product-category {
-      margin: 22px 0 10px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #294132;
-    }
-
-    /* ===================== PRODUCT GRID ===================== */
-    .product-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .product-card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 16px;
-      border: 1px solid rgba(160,190,170,0.35);
-      box-shadow: 0 6px 14px rgba(40,60,46,0.06);
-      transition: 0.2s;
-    }
-
-    .product-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(40,60,46,0.1);
-    }
-
-    .product-name {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 3px;
-    }
-
-    .product-tag {
-      font-size: 0.75rem;
-      display: inline-block;
-      padding: 4px 10px;
-      background: #E9F4ED;
-      border-radius: 999px;
-      color: #476856;
-      margin-bottom: 8px;
-    }
-
-    .product-note {
-      font-size: 0.87rem;
-      color: #354C3D;
-    }
-
-    /* ===================== FOOTER ===================== */
+    /* ===== Footer ===== */
     footer {
-      margin-top: 40px;
-      padding: 18px 0;
-      background: rgba(228,240,231,0.9);
-      border-top: 1px solid rgba(155,183,162,0.3);
-    }
-
-    footer p {
-      font-size: 0.78rem;
+      border-top: 1px solid rgba(155, 183, 162, 0.3);
+      background: rgba(228, 240, 231, 0.9);
+      padding: 14px 0 20px;
       text-align: center;
-      color: #4F6858;
+      font-size: 0.85rem;
+      color: #264333;
     }
 
-    @media (min-width: 760px) {
-      .product-grid {
-        grid-template-columns: 1fr 1fr;
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 30px 18px 26px;
+      }
+
+      .article-wrapper {
+        padding: 0 14px 40px;
       }
     }
   </style>
 </head>
-
 <body>
 
-<!-- ===================== HEADER ===================== -->
-<header>
-  <div class="wrapper header-inner">
-    <div>
-      <div class="logo-main">NowAuraa</div>
-      <div class="logo-sub">Curated Skincare · Gentle Picks</div>
-    </div>
+  <!-- Header (matches blog/products header style) -->
+  <header>
+    <div class="wrapper header-inner">
+      <div class="logo-block">
+        <span class="logo-main">NowAuraa</span>
+        <span class="logo-sub">soft skin · light energy · real glow</span>
+      </div>
 
-    <nav>
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="blog.html" class="nav-link">Blog</a>
-      <a href="routines.html" class="nav-link">Routines</a>
-      <a href="products.html" class="nav-link active">Products</a>
-    </nav>
-  </div>
-</header>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="routines.html" class="nav-link active">Routines</a>
+        <a href="products.html" class="nav-link">Products</a>
+      </nav>
+    </div>
+  </header>
+
 <header>
   <div class="wrapper header-inner">
     <div class="logo-block">
