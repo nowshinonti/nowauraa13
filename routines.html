@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,18 +129,24 @@
       padding: 5px 14px;
       border-radius: 999px;
       margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero h1 {
       font-size: 2rem;
       max-width: 520px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero p {
+      margin-top: 8px;
       max-width: 600px;
       font-size: 0.98rem;
       color: #3C5547;
-      margin-top: 8px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-highlight {
@@ -150,16 +157,20 @@
     .hero-actions {
       margin-top: 14px;
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
     }
 
     .btn {
       display: inline-block;
       padding: 9px 16px;
       border-radius: 999px;
+      border: none;
       cursor: pointer;
       font-size: 0.9rem;
+      text-decoration: none;
       transition: transform 0.1s, box-shadow 0.2s, background 0.2s;
     }
 
@@ -184,7 +195,7 @@
       background: rgba(255, 255, 255, 0.85);
     }
 
-    /* ===== Section Header ===== */
+    /* ===== Section header ===== */
     .section-header {
       margin: 28px 0 16px;
     }
@@ -198,7 +209,7 @@
       color: #4F6858;
     }
 
-    /* ===== Routines Grid ===== */
+    /* ===== Routines grid ===== */
     .routine-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -210,8 +221,8 @@
       background: #FDFEFD;
       border-radius: 18px;
       padding: 18px 18px 20px;
-      border: 1px solid rgba(150, 182, 160, 0.3);
       box-shadow: 0 10px 24px rgba(36, 60, 44, 0.06);
+      border: 1px solid rgba(150, 182, 160, 0.3);
       position: relative;
       overflow: hidden;
     }
@@ -293,7 +304,6 @@
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -302,7 +312,6 @@
       <span class="logo-main">NowAuraa</span>
       <span class="logo-sub">Routines · Glow Habits · Soft Skin</span>
     </div>
-
     <nav>
       <a href="index.html" class="nav-link">Home</a>
       <a href="blog.html" class="nav-link">Blog</a>
@@ -312,6 +321,121 @@
   </div>
 </header>
 
-<!-- All your content stays EXACTLY the same -->
+<main class="wrapper">
+  <section class="hero">
+    <span class="hero-pill">Glow plans for real life</span>
+    <h1>Skincare routines that actually fit your schedule.</h1>
+    <p>
+      No 15-step chaos. Just <span class="hero-highlight">intentional, 5-step routines</span> you can follow
+      on busy school days, long shifts, or slow self-care nights.
+    </p>
+    <div class="hero-actions">
+      <a href="#routines" class="btn btn-primary">Browse routines</a>
+      <a href="products.html" class="btn btn-ghost">See matching products</a>
+    </div>
+  </section>
+
+  <section id="routines">
+    <div class="section-header">
+      <h2>Routines for different moods & skin days.</h2>
+      <p>
+        Your skin changes with weather, hormones, stress, and sleep.
+        Choose the routine that feels right for how you’re living this week.
+      </p>
+    </div>
+
+    <div class="routine-grid">
+      <!-- Morning Glow -->
+      <article class="routine-card">
+        <div class="routine-icon">☀️</div>
+        <div class="routine-tag">Daytime · Glow</div>
+        <h3>Morning Glow Routine</h3>
+        <p class="routine-desc">
+          For mornings when you need to look awake in 10 minutes or less.
+        </p>
+        <ol class="routine-steps">
+          <li><strong>Gentle Cleanser</strong> – Remove sweat & oil from the night.</li>
+          <li><strong>Hydrating Toner / Essence</strong> – Press into damp skin for a soft plump look.</li>
+          <li><strong>Brightening Serum (Vitamin C / Niacinamide)</strong> – Support glow & dark spots.</li>
+          <li><strong>Lightweight Moisturizer</strong> – Gel or cream, whatever your skin loves.</li>
+          <li><strong>SPF 30+ (non-negotiable)</strong> – Final step, every morning.</li>
+        </ol>
+        <p class="routine-tip">
+          ✨ Shortcut days: Cleanser → Moisturizer → SPF. Three steps still count as self-care.
+        </p>
+      </article>
+
+      <!-- Night Reset -->
+      <article class="routine-card">
+        <div class="routine-icon">🌙</div>
+        <div class="routine-tag">Night · Reset</div>
+        <h3>Night Reset Routine</h3>
+        <p class="routine-desc">
+          For washing off makeup, SPF, and “I’m so tired” energy before bed.
+        </p>
+        <ol class="routine-steps">
+          <li><strong>Oil/Balm Cleanser</strong> – Melt SPF, makeup, pollution.</li>
+          <li><strong>Gentle Gel Cleanser</strong> – Fully clean skin without stripping it.</li>
+          <li><strong>Hydrating Serum or Essence</strong> – Add water back in.</li>
+          <li><strong>Treatment (Retinol / AHA / BHA)</strong> – Only 2–3 nights per week.</li>
+          <li><strong>Barrier Repair Moisturizer</strong> – Seal everything in, support your barrier.</li>
+        </ol>
+        <p class="routine-tip">
+          🌙 On exhausted nights, do step 2 + 5 only. Perfect routines are fake—consistent ones work.
+        </p>
+      </article>
+
+      <!-- Acne-Safe -->
+      <article class="routine-card">
+        <div class="routine-icon">💚</div>
+        <div class="routine-tag">Balanced · Acne-Safe</div>
+        <h3>Acne-Safe Calm Routine</h3>
+        <p class="routine-desc">
+          For breakout-prone skin that needs structure and kindness, not punishment.
+        </p>
+        <ol class="routine-steps">
+          <li><strong>Foaming or Gel Cleanser</strong> – No harsh scrubs, ever.</li>
+          <li><strong>Niacinamide Serum</strong> – Helps with oil, redness, and texture.</li>
+          <li><strong>Azelaic Acid / BHA</strong> – Use 2–3x per week or as a spot treatment.</li>
+          <li><strong>Oil-Free Moisturizer</strong> – Light but still hydrating.</li>
+          <li><strong>Non-Comedogenic SPF</strong> – Especially important with actives.</li>
+        </ol>
+        <p class="routine-tip">
+          💚 Introduce <strong>one new active at a time</strong>. If your skin feels angry, pull back.
+        </p>
+      </article>
+
+      <!-- Dry / Dehydrated -->
+      <article class="routine-card">
+        <div class="routine-icon">☁️</div>
+        <div class="routine-tag">Comfort · Dry & Dehydrated</div>
+        <h3>Cloud Skin Comfort Routine</h3>
+        <p class="routine-desc">
+          For tight, flaky, “my face drinks moisturizer” skin days.
+        </p>
+        <ol class="routine-steps">
+          <li><strong>Cream / Milk Cleanser</strong> – Clean without stripping.</li>
+          <li><strong>Mist or Hydrating Toner</strong> – Layer 2–3 times on damp skin.</li>
+          <li><strong>HA + Glycerin Serum</strong> – Trap water in, not out.</li>
+          <li><strong>Rich Moisturizer</strong> – Look for ceramides, squalane, shea, or oat.</li>
+          <li><strong>Hydrating SPF</strong> – Creamy sunscreen to seal hydration in daytime.</li>
+        </ol>
+        <p class="routine-tip">
+          ☁ Bonus: A humidifier + drinking water = your barrier’s favorite duo.
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrapper">
+    <p>NowAuraa © 2025 · Build routines that love you back, not drain you.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
 
 
