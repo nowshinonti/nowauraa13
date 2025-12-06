@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NowAuraa Skincare Blog</title>
-<nav>
-  <a href="index.html" class="nav-link">Home</a>
-  <a href="routines.html" class="nav-link">Routines</a>
-  <a href="products.html" class="nav-link">Products</a>
-  <a href="blog.html" class="nav-link">Blog</a>
-</nav>
 
   <style>
     /* ===============================
@@ -26,6 +20,27 @@
 
     /* Header */
     header {
+      .top-header {
+  background-color: #d6ecdd;      /* soft green bar like the first image */
+  padding: 14px 0;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: center;        /* centers them horizontally */
+  gap: 60px;                      /* space between each link */
+  font-size: 1rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #234232;                 /* dark green text */
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
       background-color: #CDEFD2; /* light mint green */
       display: flex;
       justify-content: space-between;
