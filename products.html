@@ -4,16 +4,28 @@
   <meta charset="UTF-8">
   <title>NowAuraa – Products</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* ===== Reset ===== */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    /* ===== Base ===== */
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       background: radial-gradient(circle at top left, #E8F3EB, #F8FBF9);
       color: #22352A;
       line-height: 1.6;
     }
 
-    a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
     .wrapper {
       width: 90%;
@@ -21,7 +33,7 @@
       margin: 0 auto;
     }
 
-    /* ===== HEADER ===== */
+    /* ===== HEADER (same layout as other pages) ===== */
     header {
       background: rgba(213, 231, 221, 0.95);
       border-bottom: 1px solid rgba(143, 173, 156, 0.3);
@@ -38,19 +50,34 @@
       padding: 14px 0;
     }
 
-    .logo-main { font-size: 1.7rem; font-weight: 700; }
-    .logo-sub { font-size: 0.8rem; color: #516B5A; }
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-main {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      font-size: 0.8rem;
+      color: #516B5A;
+    }
 
     nav {
       display: flex;
       gap: 14px;
+      flex-wrap: wrap;
     }
 
     .nav-link {
       padding: 6px 14px;
       border-radius: 999px;
       font-size: 0.9rem;
-      transition: 0.2s;
+      color: #23382C;
+      transition: background 0.2s, transform 0.1s;
     }
 
     .nav-link:hover {
@@ -58,8 +85,9 @@
       transform: translateY(-1px);
     }
 
-    .active {
+    .nav-link.active {
       background: #89B89A;
+      color: #0E1913;
       font-weight: 600;
     }
 
@@ -86,13 +114,23 @@
       margin-bottom: 6px;
     }
 
-    h1 { font-size: 2rem; max-width: 520px; }
-    p { max-width: 650px; }
+    .hero h1 {
+      font-size: 2rem;
+      max-width: 520px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 0.96rem;
+      color: #3C5547;
+    }
 
     .hero-actions {
       margin-top: 12px;
       display: flex;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
     .btn {
@@ -100,19 +138,36 @@
       border-radius: 999px;
       font-size: 0.9rem;
       cursor: pointer;
-      transition: 0.2s;
       border: none;
+      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+      display: inline-block;
     }
 
     .btn-primary {
       background: #89B89A;
       color: #0E1913;
+      box-shadow: 0 6px 14px rgba(85, 129, 101, 0.35);
     }
-    .btn-primary:hover { background: #7AA78C; }
+
+    .btn-primary:hover {
+      background: #7AA78C;
+      transform: translateY(-1px);
+    }
 
     /* ===== SECTION HEADERS ===== */
-    .section-header { margin: 24px 0 12px; }
-    .section-header h2 { font-size: 1.4rem; }
+    .section-header {
+      margin: 24px 0 12px;
+    }
+
+    .section-header h2 {
+      font-size: 1.4rem;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: #4F6858;
+      max-width: 650px;
+    }
 
     /* ===== PRODUCT GRID ===== */
     .product-category {
@@ -129,7 +184,7 @@
     }
 
     .product-card {
-      background: white;
+      background: #FFFFFF;
       border-radius: 14px;
       padding: 16px;
       border: 1px solid rgba(160,190,170,0.35);
@@ -177,6 +232,7 @@
       color: #4F6858;
     }
 
+    /* ===== Responsive ===== */
     @media (min-width: 760px) {
       .product-grid {
         grid-template-columns: 1fr 1fr;
@@ -189,9 +245,9 @@
 
 <header>
   <div class="wrapper header-inner">
-    <div>
-      <div class="logo-main">NowAuraa</div>
-      <div class="logo-sub">Curated Skincare · Gentle Picks</div>
+    <div class="logo-block">
+      <span class="logo-main">NowAuraa</span>
+      <span class="logo-sub">Curated Skincare · Gentle Picks</span>
     </div>
 
     <nav>
@@ -208,7 +264,11 @@
   <section class="hero">
     <span class="hero-pill">Product moodboard</span>
     <h1>Products that play nicely with your routines.</h1>
-    <p>These aren’t sponsored—just friendly recommendations that tend to work well for many skin types. Always patch test, listen to your skin, and choose what fits your budget and comfort.</p>
+    <p>
+      These aren’t sponsored—just friendly recommendations that tend to work well
+      for many skin types. Always patch test, listen to your skin, and choose what
+      fits your budget and comfort.
+    </p>
 
     <div class="hero-actions">
       <a href="routines.html" class="btn btn-primary">Match with a routine</a>
@@ -218,7 +278,10 @@
   <section>
     <div class="section-header">
       <h2>By step, not by hype.</h2>
-      <p>Start with the basics: cleanser, moisturizer, SPF. Then slowly add serums if (and only if) your skin needs them.</p>
+      <p>
+        Start with the basics: cleanser, moisturizer, SPF. Then slowly add serums
+        if (and only if) your skin needs them.
+      </p>
     </div>
 
     <!-- ==================== CLEANSERS ==================== -->
@@ -228,19 +291,25 @@
       <div class="product-card">
         <div class="product-name">CeraVe Hydrating Cleanser</div>
         <div class="product-tag">Normal · Dry</div>
-        <p class="product-note">Creamy, non-foaming, barrier-friendly. Great for morning cleanse or dry, sensitive skin.</p>
+        <p class="product-note">
+          Creamy, non-foaming, barrier-friendly. Great for morning cleanse or dry, sensitive skin.
+        </p>
       </div>
 
       <div class="product-card">
         <div class="product-name">La Roche-Posay Toleriane Purifying Foaming</div>
         <div class="product-tag">Normal · Oily</div>
-        <p class="product-note">Gently removes oil without stripping. Never leaves skin squeaky or tight.</p>
+        <p class="product-note">
+          Gently removes oil without stripping. Never leaves skin squeaky or tight.
+        </p>
       </div>
 
       <div class="product-card">
         <div class="product-name">The Inkey List Salicylic Acid Cleanser</div>
         <div class="product-tag">Acne-Prone</div>
-        <p class="product-note">Light BHA cleanser to help with clogged pores. Start slowly.</p>
+        <p class="product-note">
+          Light BHA cleanser to help with clogged pores. Start slowly.
+        </p>
       </div>
 
     </div>
@@ -252,19 +321,25 @@
       <div class="product-card">
         <div class="product-name">La Roche-Posay Pure Vitamin C Serum</div>
         <div class="product-tag">Brightening</div>
-        <p class="product-note">Adds glow and evens tone. Use in the morning under SPF.</p>
+        <p class="product-note">
+          Adds glow and evens tone. Use in the morning under SPF.
+        </p>
       </div>
 
       <div class="product-card">
         <div class="product-name">The Ordinary Niacinamide 10% + Zinc</div>
         <div class="product-tag">Oil · Pores</div>
-        <p class="product-note">Helps regulate oil and smooth texture. Best when introduced slowly.</p>
+        <p class="product-note">
+          Helps regulate oil and smooth texture. Best when introduced slowly.
+        </p>
       </div>
 
       <div class="product-card">
         <div class="product-name">Hydrating Hyaluronic Serum</div>
         <div class="product-tag">Dehydrated</div>
-        <p class="product-note">Apply on damp skin then lock in with moisturizer — a water magnet.</p>
+        <p class="product-note">
+          Apply on damp skin then lock in with moisturizer — a water magnet.
+        </p>
       </div>
 
     </div>
@@ -276,19 +351,25 @@
       <div class="product-card">
         <div class="product-name">CeraVe PM Facial Moisturizing Lotion</div>
         <div class="product-tag">Most Skin Types</div>
-        <p class="product-note">Lightweight, ceramide-rich, great for layering morning or night.</p>
+        <p class="product-note">
+          Lightweight, ceramide-rich, great for layering morning or night.
+        </p>
       </div>
 
       <div class="product-card">
         <div class="product-name">Clinique Moisture Surge</div>
         <div class="product-tag">Dehydrated</div>
-        <p class="product-note">Gel-cream formula that hydrates without heaviness — perfect under makeup.</p>
+        <p class="product-note">
+          Gel-cream formula that hydrates without heaviness — perfect under makeup.
+        </p>
       </div>
 
       <div class="product-card">
         <div class="product-name">Rich Barrier Repair Cream</div>
         <div class="product-tag">Dry · Sensitized</div>
-        <p class="product-note">Ceramide-heavy comfort cream — a “nighttime hug” for your barrier.</p>
+        <p class="product-note">
+          Ceramide-heavy comfort cream — a “nighttime hug” for your barrier.
+        </p>
       </div>
 
     </div>
@@ -300,19 +381,25 @@
       <div class="product-card">
         <div class="product-name">Supergoop Unseen / Clear Gel SPF</div>
         <div class="product-tag">Makeup-Friendly</div>
-        <p class="product-note">Clear, lightweight, great for beginners or anyone who hates sunscreen texture.</p>
+        <p class="product-note">
+          Clear, lightweight, great for beginners or anyone who hates sunscreen texture.
+        </p>
       </div>
 
       <div class="product-card">
         <div class="product-name">La Roche-Posay Melt-In Milk SPF</div>
         <div class="product-tag">Dry · Normal</div>
-        <p class="product-note">Hydrating SPF that works beautifully for both face and body.</p>
+        <p class="product-note">
+          Hydrating SPF that works beautifully for both face and body.
+        </p>
       </div>
 
       <div class="product-card">
         <div class="product-name">Beauty of Joseon Relief Sun</div>
         <div class="product-tag">Sensitive</div>
-        <p class="product-note">Light, non-sticky, calming — popular for a reason.</p>
+        <p class="product-note">
+          Light, non-sticky, calming — popular for a reason.
+        </p>
       </div>
 
     </div>
