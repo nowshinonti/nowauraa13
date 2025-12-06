@@ -3,29 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>NowAuraa – Products</title>
+
   <style>
     /* ===== Reset ===== */
-    html, body {
-      margin: 0;
-      padding: 0;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    * {
-      box-sizing: border-box;
-    }
+    html, body { margin: 0; padding: 0; }
 
-    /* ===== Base ===== */
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: radial-gradient(circle at top left, #E8F3EB, #F8FBF9);
       color: #22352A;
       line-height: 1.6;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     .wrapper {
       width: 90%;
@@ -33,11 +25,11 @@
       margin: 0 auto;
     }
 
-    /* ===== HEADER (same layout as other pages) ===== */
+    /* ===================== HEADER ===================== */
     header {
       background: rgba(213, 231, 221, 0.95);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(143, 173, 156, 0.3);
-      backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 50;
@@ -50,34 +42,29 @@
       padding: 14px 0;
     }
 
-    .logo-block {
-      display: flex;
-      flex-direction: column;
-    }
-
     .logo-main {
       font-size: 1.7rem;
       font-weight: 700;
-      letter-spacing: 1px;
     }
 
     .logo-sub {
       font-size: 0.8rem;
       color: #516B5A;
+      margin-top: 2px;
     }
 
     nav {
       display: flex;
-      gap: 14px;
+      gap: 14px;   /* Tighter spacing like your index page */
       flex-wrap: wrap;
     }
 
     .nav-link {
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 999px;
       font-size: 0.9rem;
+      transition: 0.2s;
       color: #23382C;
-      transition: background 0.2s, transform 0.1s;
     }
 
     .nav-link:hover {
@@ -85,91 +72,66 @@
       transform: translateY(-1px);
     }
 
-    .nav-link.active {
+    .active {
       background: #89B89A;
-      color: #0E1913;
       font-weight: 600;
     }
 
-    /* ===== HERO ===== */
+    /* ===================== HERO ===================== */
     .hero {
       margin: 26px 0 24px;
       padding: 26px;
       background: linear-gradient(135deg, #E8F3EB, #F9FFF9);
       border-radius: 22px;
       box-shadow: 0 10px 26px rgba(50, 80, 60, 0.1);
-      position: relative;
-      overflow: hidden;
     }
 
     .hero-pill {
       display: inline-block;
       padding: 5px 14px;
-      font-size: 0.78rem;
-      text-transform: uppercase;
       background: rgba(225,242,232,0.9);
+      font-size: 0.75rem;
+      letter-spacing: 1.6px;
       border-radius: 999px;
-      letter-spacing: 1.5px;
       color: #6C8A75;
-      margin-bottom: 6px;
-    }
-
-    .hero h1 {
-      font-size: 2rem;
-      max-width: 520px;
       margin-bottom: 8px;
+      text-transform: uppercase;
     }
 
-    .hero p {
-      max-width: 650px;
-      font-size: 0.96rem;
-      color: #3C5547;
-    }
+    h1 { font-size: 2rem; margin-bottom: 6px; }
 
     .hero-actions {
-      margin-top: 12px;
+      margin-top: 14px;
       display: flex;
       gap: 10px;
-      flex-wrap: wrap;
     }
 
     .btn {
       padding: 9px 16px;
       border-radius: 999px;
       font-size: 0.9rem;
+      text-decoration: none;
       cursor: pointer;
       border: none;
-      transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
-      display: inline-block;
+      transition: 0.2s;
     }
 
     .btn-primary {
       background: #89B89A;
       color: #0E1913;
-      box-shadow: 0 6px 14px rgba(85, 129, 101, 0.35);
     }
+    .btn-primary:hover { background: #7AA78C; }
 
-    .btn-primary:hover {
-      background: #7AA78C;
-      transform: translateY(-1px);
-    }
-
-    /* ===== SECTION HEADERS ===== */
+    /* ===================== SECTIONS ===================== */
     .section-header {
       margin: 24px 0 12px;
     }
 
     .section-header h2 {
       font-size: 1.4rem;
+      margin-bottom: 4px;
     }
 
-    .section-header p {
-      font-size: 0.9rem;
-      color: #4F6858;
-      max-width: 650px;
-    }
-
-    /* ===== PRODUCT GRID ===== */
     .product-category {
       margin: 22px 0 10px;
       font-size: 1.1rem;
@@ -177,6 +139,7 @@
       color: #294132;
     }
 
+    /* ===================== PRODUCT GRID ===================== */
     .product-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -184,8 +147,8 @@
     }
 
     .product-card {
-      background: #FFFFFF;
-      border-radius: 14px;
+      background: #fff;
+      border-radius: 16px;
       padding: 16px;
       border: 1px solid rgba(160,190,170,0.35);
       box-shadow: 0 6px 14px rgba(40,60,46,0.06);
@@ -200,27 +163,27 @@
     .product-name {
       font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .product-tag {
-      display: inline-block;
       font-size: 0.75rem;
+      display: inline-block;
       padding: 4px 10px;
-      border-radius: 999px;
       background: #E9F4ED;
+      border-radius: 999px;
       color: #476856;
       margin-bottom: 8px;
     }
 
     .product-note {
-      font-size: 0.85rem;
-      color: #3F5546;
+      font-size: 0.87rem;
+      color: #354C3D;
     }
 
-    /* ===== FOOTER ===== */
+    /* ===================== FOOTER ===================== */
     footer {
-      margin-top: 36px;
+      margin-top: 40px;
       padding: 18px 0;
       background: rgba(228,240,231,0.9);
       border-top: 1px solid rgba(155,183,162,0.3);
@@ -232,7 +195,6 @@
       color: #4F6858;
     }
 
-    /* ===== Responsive ===== */
     @media (min-width: 760px) {
       .product-grid {
         grid-template-columns: 1fr 1fr;
@@ -243,11 +205,12 @@
 
 <body>
 
+<!-- ===================== HEADER ===================== -->
 <header>
   <div class="wrapper header-inner">
-    <div class="logo-block">
-      <span class="logo-main">NowAuraa</span>
-      <span class="logo-sub">Curated Skincare · Gentle Picks</span>
+    <div>
+      <div class="logo-main">NowAuraa</div>
+      <div class="logo-sub">Curated Skincare · Gentle Picks</div>
     </div>
 
     <nav>
@@ -259,15 +222,15 @@
   </div>
 </header>
 
+<!-- ===================== MAIN ===================== -->
 <main class="wrapper">
 
   <section class="hero">
     <span class="hero-pill">Product moodboard</span>
     <h1>Products that play nicely with your routines.</h1>
     <p>
-      These aren’t sponsored—just friendly recommendations that tend to work well
-      for many skin types. Always patch test, listen to your skin, and choose what
-      fits your budget and comfort.
+      These aren’t sponsored—just friendly recommendations that work well for many skin types.
+      Patch test, listen to your skin, and choose what fits your budget & comfort.
     </p>
 
     <div class="hero-actions">
@@ -278,13 +241,10 @@
   <section>
     <div class="section-header">
       <h2>By step, not by hype.</h2>
-      <p>
-        Start with the basics: cleanser, moisturizer, SPF. Then slowly add serums
-        if (and only if) your skin needs them.
-      </p>
+      <p>Start with cleanser → moisturizer → SPF. Add serums only if needed.</p>
     </div>
 
-    <!-- ==================== CLEANSERS ==================== -->
+    <!-- ================= CLEANSERS ================= -->
     <h3 class="product-category">✨ Cleansers</h3>
     <div class="product-grid">
 
@@ -292,15 +252,15 @@
         <div class="product-name">CeraVe Hydrating Cleanser</div>
         <div class="product-tag">Normal · Dry</div>
         <p class="product-note">
-          Creamy, non-foaming, barrier-friendly. Great for morning cleanse or dry, sensitive skin.
+          Creamy, non-foaming, barrier-safe. Perfect for gentle AM cleansing.
         </p>
       </div>
 
       <div class="product-card">
-        <div class="product-name">La Roche-Posay Toleriane Purifying Foaming</div>
+        <div class="product-name">La Roche-Posay Toleriane Foaming</div>
         <div class="product-tag">Normal · Oily</div>
         <p class="product-note">
-          Gently removes oil without stripping. Never leaves skin squeaky or tight.
+          Cleans without stripping or tightness — ideal everyday cleanser.
         </p>
       </div>
 
@@ -308,21 +268,21 @@
         <div class="product-name">The Inkey List Salicylic Acid Cleanser</div>
         <div class="product-tag">Acne-Prone</div>
         <p class="product-note">
-          Light BHA cleanser to help with clogged pores. Start slowly.
+          Helps unclog pores & reduce breakouts. Start slow, especially with actives.
         </p>
       </div>
 
     </div>
 
-    <!-- ==================== SERUMS ==================== -->
+    <!-- ================= SERUMS ================= -->
     <h3 class="product-category">💧 Serums</h3>
     <div class="product-grid">
 
       <div class="product-card">
-        <div class="product-name">La Roche-Posay Pure Vitamin C Serum</div>
+        <div class="product-name">La Roche-Posay Pure Vitamin C</div>
         <div class="product-tag">Brightening</div>
         <p class="product-note">
-          Adds glow and evens tone. Use in the morning under SPF.
+          Boosts glow and evens tone — best used under SPF in the morning.
         </p>
       </div>
 
@@ -330,7 +290,7 @@
         <div class="product-name">The Ordinary Niacinamide 10% + Zinc</div>
         <div class="product-tag">Oil · Pores</div>
         <p class="product-note">
-          Helps regulate oil and smooth texture. Best when introduced slowly.
+          Reduces shine, redness, and texture. A beginner-friendly serum.
         </p>
       </div>
 
@@ -338,21 +298,21 @@
         <div class="product-name">Hydrating Hyaluronic Serum</div>
         <div class="product-tag">Dehydrated</div>
         <p class="product-note">
-          Apply on damp skin then lock in with moisturizer — a water magnet.
+          Apply on damp skin — works like a “water magnet” when sealed with moisturizer.
         </p>
       </div>
 
     </div>
 
-    <!-- ==================== MOISTURIZERS ==================== -->
+    <!-- ================= MOISTURIZERS ================= -->
     <h3 class="product-category">🧴 Moisturizers</h3>
     <div class="product-grid">
 
       <div class="product-card">
-        <div class="product-name">CeraVe PM Facial Moisturizing Lotion</div>
+        <div class="product-name">CeraVe PM Lotion</div>
         <div class="product-tag">Most Skin Types</div>
         <p class="product-note">
-          Lightweight, ceramide-rich, great for layering morning or night.
+          Lightweight, ceramide-rich — works day or night.
         </p>
       </div>
 
@@ -360,7 +320,7 @@
         <div class="product-name">Clinique Moisture Surge</div>
         <div class="product-tag">Dehydrated</div>
         <p class="product-note">
-          Gel-cream formula that hydrates without heaviness — perfect under makeup.
+          Plumping gel-cream that layers well under sunscreen & makeup.
         </p>
       </div>
 
@@ -368,21 +328,21 @@
         <div class="product-name">Rich Barrier Repair Cream</div>
         <div class="product-tag">Dry · Sensitized</div>
         <p class="product-note">
-          Ceramide-heavy comfort cream — a “nighttime hug” for your barrier.
+          Ceramide + lipid support — perfect “nighttime hug” for the barrier.
         </p>
       </div>
 
     </div>
 
-    <!-- ==================== SUNSCREENS ==================== -->
+    <!-- ================= SUNSCREENS ================= -->
     <h3 class="product-category">☀ Sunscreens</h3>
     <div class="product-grid">
 
       <div class="product-card">
-        <div class="product-name">Supergoop Unseen / Clear Gel SPF</div>
+        <div class="product-name">Supergoop Unseen SPF</div>
         <div class="product-tag">Makeup-Friendly</div>
         <p class="product-note">
-          Clear, lightweight, great for beginners or anyone who hates sunscreen texture.
+          Clear, silicone-smooth texture — great under foundation.
         </p>
       </div>
 
@@ -390,7 +350,7 @@
         <div class="product-name">La Roche-Posay Melt-In Milk SPF</div>
         <div class="product-tag">Dry · Normal</div>
         <p class="product-note">
-          Hydrating SPF that works beautifully for both face and body.
+          Hydrating, plush, and comfortable for all-day wear.
         </p>
       </div>
 
@@ -398,7 +358,7 @@
         <div class="product-name">Beauty of Joseon Relief Sun</div>
         <div class="product-tag">Sensitive</div>
         <p class="product-note">
-          Light, non-sticky, calming — popular for a reason.
+          Lightweight & calming — a cult favorite for a reason.
         </p>
       </div>
 
@@ -408,6 +368,7 @@
 
 </main>
 
+<!-- ================= FOOTER ================= -->
 <footer>
   <div class="wrapper">
     <p>NowAuraa © 2025 · Choose products that support you, not stress you.</p>
