@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>NowAuraa – Products</title>
+  <title>NowAuraa – Routines</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -166,33 +166,33 @@
       font-size: 0.96rem;
     }
 
-    /* ===== Product Grid ===== */
-    .product-category {
+    /* ===== Routine Grid ===== */
+    .routine-category {
       margin-top: 22px;
       margin-bottom: 10px;
       font-size: 1.2rem;
     }
 
-    .product-grid {
+    .routine-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 14px;
       margin-bottom: 10px;
     }
 
-    .product-card {
+    .routine-card {
       background-color: #E4F9EB;
       border-radius: 14px;
       padding: 14px 14px 16px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.03);
     }
 
-    .product-name {
+    .routine-name {
       font-weight: 600;
       margin-bottom: 4px;
     }
 
-    .product-tag {
+    .routine-tag {
       font-size: 0.82rem;
       text-transform: uppercase;
       letter-spacing: 0.09em;
@@ -200,10 +200,37 @@
       margin-bottom: 8px;
     }
 
-    .product-note {
+    .routine-note {
       font-size: 0.9rem;
       color: #4E6C5C;
       line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .routine-steps-title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      margin-top: 6px;
+      margin-bottom: 3px;
+      color: #294537;
+    }
+
+    .routine-steps {
+      padding-left: 18px;
+      font-size: 0.88rem;
+      color: #476453;
+      margin-bottom: 6px;
+    }
+
+    .routine-steps li {
+      margin-bottom: 3px;
+    }
+
+    .routine-tip {
+      font-size: 0.82rem;
+      color: #5B7563;
+      margin-top: 4px;
+      font-style: italic;
     }
 
     /* ===== Footer ===== */
@@ -238,8 +265,8 @@
       <nav class="main-nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="blog.html" class="nav-link">Blog</a>
-        <a href="routines.html" class="nav-link">Routines</a>
-        <a href="products.html" class="nav-link active">Products</a>
+        <a href="routines.html" class="nav-link active">Routines</a>
+        <a href="products.html" class="nav-link">Products</a>
       </nav>
     </div>
   </header>
@@ -248,139 +275,233 @@
   <main class="wrapper">
 
     <section class="hero">
-      <span class="hero-pill">Product moodboard</span>
-      <h1>Products that play nicely with your routines.</h1>
+      <span class="hero-pill">Routine guide</span>
+      <h1>Gentle routines that actually fit your life.</h1>
       <p>
-        These aren’t sponsored—just friendly recommendations that work well for many skin types.
-        Patch test, listen to your skin, and choose what fits your budget & comfort.
+        No 15-step chaos. Just simple AM & PM routines you can stick to,
+        based on how your skin behaves right now. Adjust, combine, and make it yours.
       </p>
 
       <div class="hero-actions">
-        <a href="routines.html" class="btn btn-primary">Match with a routine</a>
+        <a href="products.html" class="btn btn-primary">See product suggestions</a>
       </div>
     </section>
 
     <section>
       <div class="section-header">
-        <h2>By step, not by hype.</h2>
-        <p>Start with cleanser → moisturizer → SPF. Add serums only if needed.</p>
+        <h2>Start with your skin, not trends.</h2>
+        <p>Pick the skin mood that feels closest to you. You can mix between categories if your skin changes week to week.</p>
       </div>
 
-      <!-- ================= CLEANSERS ================= -->
-      <h3 class="product-category">✨ Cleansers</h3>
-      <div class="product-grid">
+      <!-- ================= NORMAL / BALANCED ================= -->
+      <h3 class="routine-category">🌿 Normal / Balanced Skin</h3>
+      <div class="routine-grid">
 
-        <div class="product-card">
-          <div class="product-name">CeraVe Hydrating Cleanser</div>
-          <div class="product-tag">Normal · Dry</div>
-          <p class="product-note">
-            Creamy, non-foaming, barrier-safe. Perfect for gentle AM cleansing.
+        <div class="routine-card">
+          <div class="routine-name">Soft & Simple AM</div>
+          <div class="routine-tag">Everyday · Low maintenance</div>
+          <p class="routine-note">
+            For skin that’s mostly chill, just gets a bit dull or tight sometimes.
+          </p>
+
+          <div class="routine-steps-title">AM Steps</div>
+          <ul class="routine-steps">
+            <li>Rinse with water or a gentle cleanser.</li>
+            <li>Light hydrating serum (optional, if you feel dry).</li>
+            <li>Lightweight moisturizer.</li>
+            <li>SPF 30+ as the non-negotiable last step.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: If you wear makeup, let moisturizer + SPF fully sink in before applying base.
           </p>
         </div>
 
-        <div class="product-card">
-          <div class="product-name">La Roche-Posay Toleriane Foaming</div>
-          <div class="product-tag">Normal · Oily</div>
-          <p class="product-note">
-            Cleans without stripping or tightness — ideal everyday cleanser.
+        <div class="routine-card">
+          <div class="routine-name">Wind-Down PM</div>
+          <div class="routine-tag">Barrier friendly</div>
+          <p class="routine-note">
+            Focused on removing the day gently and keeping your barrier happy.
           </p>
-        </div>
 
-        <div class="product-card">
-          <div class="product-name">The Inkey List Salicylic Acid Cleanser</div>
-          <div class="product-tag">Acne-Prone</div>
-          <p class="product-note">
-            Helps unclog pores & reduce breakouts. Start slow, especially with actives.
-          </p>
-        </div>
-
-      </div>
-
-      <!-- ================= SERUMS ================= -->
-      <h3 class="product-category">💧 Serums</h3>
-      <div class="product-grid">
-
-        <div class="product-card">
-          <div class="product-name">La Roche-Posay Pure Vitamin C</div>
-          <div class="product-tag">Brightening</div>
-          <p class="product-note">
-            Boosts glow and evens tone — best used under SPF in the morning.
-          </p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-name">The Ordinary Niacinamide 10% + Zinc</div>
-          <div class="product-tag">Oil · Pores</div>
-          <p class="product-note">
-            Reduces shine, redness, and texture. A beginner-friendly serum.
-          </p>
-        </div>
-
-        <div class="product-card">
-          <div class="product-name">Hydrating Hyaluronic Serum</div>
-          <div class="product-tag">Dehydrated</div>
-          <p class="product-note">
-            Apply on damp skin — works like a “water magnet” when sealed with moisturizer.
+          <div class="routine-steps-title">PM Steps</div>
+          <ul class="routine-steps">
+            <li>Cleanser (double cleanse only if you wear heavy makeup/SPF).</li>
+            <li>Hydrating toner or mist (optional).</li>
+            <li>Moisturizer — slightly richer than your AM if needed.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: If everything feels good, you don’t have to add “actives” just because TikTok says so.
           </p>
         </div>
 
       </div>
 
-      <!-- ================= MOISTURIZERS ================= -->
-      <h3 class="product-category">🧴 Moisturizers</h3>
-      <div class="product-grid">
+      <!-- ================= OILY / ACNE-PRONE ================= -->
+      <h3 class="routine-category">✨ Oily / Acne-Prone Skin</h3>
+      <div class="routine-grid">
 
-        <div class="product-card">
-          <div class="product-name">CeraVe PM Lotion</div>
-          <div class="product-tag">Most Skin Types</div>
-          <p class="product-note">
-            Lightweight, ceramide-rich — works day or night.
+        <div class="routine-card">
+          <div class="routine-name">Shine-Managed AM</div>
+          <div class="routine-tag">Breakout prone</div>
+          <p class="routine-note">
+            Balances oil without making your skin feel squeaky or stripped.
+          </p>
+
+          <div class="routine-steps-title">AM Steps</div>
+          <ul class="routine-steps">
+            <li>Gentle foaming or salicylic acid cleanser.</li>
+            <li>Lightweight serum (niacinamide or oil-control).</li>
+            <li>Gel or lotion moisturizer — oil-free if you prefer.</li>
+            <li>SPF 30+ — look for “non-comedogenic” or “for oily skin”.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: Blotting papers & powder are for shine, not for “fixing” your skin. Oily is a skin type, not a flaw.
           </p>
         </div>
 
-        <div class="product-card">
-          <div class="product-name">Clinique Moisture Surge</div>
-          <div class="product-tag">Dehydrated</div>
-          <p class="product-note">
-            Plumping gel-cream that layers well under sunscreen & makeup.
+        <div class="routine-card">
+          <div class="routine-name">Acne-Safe PM</div>
+          <div class="routine-tag">Slow & steady</div>
+          <p class="routine-note">
+            The goal: calmer breakouts over time, not burning them off overnight.
           </p>
-        </div>
 
-        <div class="product-card">
-          <div class="product-name">Rich Barrier Repair Cream</div>
-          <div class="product-tag">Dry · Sensitized</div>
-          <p class="product-note">
-            Ceramide + lipid support — perfect “nighttime hug” for the barrier.
+          <div class="routine-steps-title">PM Steps</div>
+          <ul class="routine-steps">
+            <li>Makeup/SPF? → Double cleanse (oil/balm then regular cleanser).</li>
+            <li>Targeted treatment a few nights a week (BHA, retinoid, or spot treatment).</li>
+            <li>Light, soothing moisturizer.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: Only introduce one active at a time and give it a few weeks before deciding if it works.
           </p>
         </div>
 
       </div>
 
-      <!-- ================= SUNSCREENS ================= -->
-      <h3 class="product-category">☀ Sunscreens</h3>
-      <div class="product-grid">
+      <!-- ================= DRY / DEHYDRATED ================= -->
+      <h3 class="routine-category">💧 Dry / Dehydrated Skin</h3>
+      <div class="routine-grid">
 
-        <div class="product-card">
-          <div class="product-name">Supergoop Unseen SPF</div>
-          <div class="product-tag">Makeup-Friendly</div>
-          <p class="product-note">
-            Clear, silicone-smooth texture — great under foundation.
+        <div class="routine-card">
+          <div class="routine-name">Glow-Protect AM</div>
+          <div class="routine-tag">Tight · Flaky</div>
+          <p class="routine-note">
+            Designed for skin that drinks everything and still asks for more.
+          </p>
+
+          <div class="routine-steps-title">AM Steps</div>
+          <ul class="routine-steps">
+            <li>Very gentle, non-foaming cleanser (or just water if you’re not oily).</li>
+            <li>Hydrating serum (hyaluronic + soothing ingredients).</li>
+            <li>Creamier moisturizer to lock things in.</li>
+            <li>SPF 30+ — moisturizing formula if possible.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: Apply hydrating products on slightly damp skin, then seal with moisturizer to prevent transepidermal water loss.
           </p>
         </div>
 
-        <div class="product-card">
-          <div class="product-name">La Roche-Posay Melt-In Milk SPF</div>
-          <div class="product-tag">Dry · Normal</div>
-          <p class="product-note">
-            Hydrating, plush, and comfortable for all-day wear.
+        <div class="routine-card">
+          <div class="routine-name">Barrier Repair PM</div>
+          <div class="routine-tag">Repair mode</div>
+          <p class="routine-note">
+            Focused on comfort: less “glam”, more “my face finally doesn’t hurt”.
+          </p>
+
+          <div class="routine-steps-title">PM Steps</div>
+          <ul class="routine-steps">
+            <li>Creamy cleanser — no harsh foaming.</li>
+            <li>Optional: hydrating toner/essence in thin layers.</li>
+            <li>Rich barrier cream with ceramides, lipids, or oat.</li>
+            <li>Optional: occlusive layer (like a thin balm) on very dry areas.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: On “recovery nights”, skip all actives and just do hydration + barrier.
           </p>
         </div>
 
-        <div class="product-card">
-          <div class="product-name">Beauty of Joseon Relief Sun</div>
-          <div class="product-tag">Sensitive</div>
-          <p class="product-note">
-            Lightweight & calming — a cult favorite for a reason.
+      </div>
+
+      <!-- ================= SENSITIVE / REACTIVE ================= -->
+      <h3 class="routine-category">🌸 Sensitive / Reactive Skin</h3>
+      <div class="routine-grid">
+
+        <div class="routine-card">
+          <div class="routine-name">Calm-First AM</div>
+          <div class="routine-tag">Redness · Stinging easily</div>
+          <p class="routine-note">
+            For skin that gets loud quickly — the routine is built to whisper, not shout.
+          </p>
+
+          <div class="routine-steps-title">AM Steps</div>
+          <ul class="routine-steps">
+            <li>Mild, fragrance-free cleanser or just a water rinse.</li>
+            <li>Soothing serum or toner (cica, oat, panthenol).</li>
+            <li>Gentle moisturizer with minimal fragrance.</li>
+            <li>Mineral or sensitive-skin SPF if chemical filters irritate you.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: Patch test new products on a small area for a few days before going full face.
+          </p>
+        </div>
+
+        <div class="routine-card">
+          <div class="routine-name">Ultra-Gentle PM</div>
+          <div class="routine-tag">Less is more</div>
+          <p class="routine-note">
+            A “quiet” night routine that avoids overloading your skin with actives.
+          </p>
+
+          <div class="routine-steps-title">PM Steps</div>
+          <ul class="routine-steps">
+            <li>Soft cleanser — avoid very hot water.</li>
+            <li>Optional: soothing mist or serum if your skin tolerates it.</li>
+            <li>Comforting moisturizer with barrier-support ingredients.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: If everything burns, pause and rebuild barrier first before adding treatments.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ================= WEEKLY EXTRAS ================= -->
+      <h3 class="routine-category">🕊 Weekly Extras (Optional)</h3>
+      <div class="routine-grid">
+
+        <div class="routine-card">
+          <div class="routine-name">Gentle Exfoliation</div>
+          <div class="routine-tag">1–2x per week</div>
+          <p class="routine-note">
+            Exfoliation should feel like a soft reset, not punishment.
+          </p>
+
+          <div class="routine-steps-title">How to use</div>
+          <ul class="routine-steps">
+            <li>Use a gentle chemical exfoliant at night instead of your treatment step.</li>
+            <li>Follow with a simple moisturizer — skip other actives that night.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: If you’re already on retinoids or strong actives, ask a professional before adding exfoliants.
+          </p>
+        </div>
+
+        <div class="routine-card">
+          <div class="routine-name">Mask Night</div>
+          <div class="routine-tag">Skin TLC</div>
+          <p class="routine-note">
+            Hydrating or calming masks pair best with barrier-focused routines.
+          </p>
+
+          <div class="routine-steps-title">How to use</div>
+          <ul class="routine-steps">
+            <li>After cleansing, apply mask of choice (hydrating or soothing).</li>
+            <li>Rinse or tissue off as directed.</li>
+            <li>Finish with a simple moisturizer.</li>
+          </ul>
+          <p class="routine-tip">
+            Tip: Avoid stacking too many “wow” products in one night. Skin loves consistency more than drama.
           </p>
         </div>
 
@@ -393,12 +514,13 @@
   <!-- ================= FOOTER ================= -->
   <footer>
     <div class="wrapper">
-      <p>NowAuraa © 2025 · Choose products that support you, not stress you.</p>
+      <p>NowAuraa © 2025 · Build routines that support you, not exhaust you.</p>
     </div>
   </footer>
 
 </body>
 </html>
+
 
 
 
