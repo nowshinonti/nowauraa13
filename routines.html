@@ -1,4 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NowAuraa – Routines</title>
 
+  <style>
+    /* ===== REMOVE TOP GAP ===== */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    /* ===== Global Reset ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== Base ===== */
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top left, #E8F3EB, #F8FBF9);
+      color: #22352A;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrapper {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ===== Header & Nav ===== */
+    header {
+      background: rgba(213, 231, 221, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(143, 173, 156, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+    }
+
+    .logo-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-main {
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo-sub {
+      font-size: 0.8rem;
+      color: #516B5A;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: #23382C;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-1px);
+    }
+
+    .nav-link.active {
+      background: #89B89A;
+      color: #0E1913;
+      font-weight: 600;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      margin: 26px 0 20px;
+      padding: 24px 22px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #E8F3EB, #F9FFF9);
+      box-shadow: 0 12px 32px rgba(50, 80, 60, 0.10);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(137, 184, 154, 0.35), transparent);
+      right: -40px;
+      top: -60px;
+      opacity: 0.7;
+    }
+
+    .hero-pill {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      color: #6C8A75;
+      display: inline-block;
+      background: rgba(225, 242, 232, 0.9);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      max-width: 520px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero p {
+      margin-top: 8px;
+      max-width: 600px;
+      font-size: 0.98rem;
+      color: #3C5547;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-highlight {
+      font-weight: 600;
+      color: #193326;
+    }
+
+    .hero-actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.1s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .btn-primary {
+      background: #89B89A;
+      color: #0E1913;
+      box-shadow: 0 6px 14px rgba(85, 129, 101, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: #7AA78C;
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #294132;
+      border: 1px solid #A2C4AC;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ===== Section header ===== */
+    .section-header {
+      margin: 28px 0 16px;
+    }
+
+    .section-header h2 {
+      font-size: 1.4rem;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: #4F6858;
+    }
+
+    /* ===== Routines grid ===== */
+    .routine-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+
+    .routine-card {
+      background: #FDFEFD;
+      border-radius: 18px;
+      padding: 18px 18px 20px;
+      box-shadow: 0 10px 24px rgba(36, 60, 44, 0.06);
+      border: 1px solid rgba(150, 182, 160, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .routine-icon {
+      position: absolute;
+      font-size: 2.2rem;
+      right: 14px;
+      top: 10px;
+      opacity: 0.25;
+    }
+
+    .routine-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      background: #E2F1E7;
+      color: #466454;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 8px;
+    }
+
+    .routine-card h3 {
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+    }
+
+    .routine-desc {
+      font-size: 0.9rem;
+      color: #384C40;
+      margin-bottom: 8px;
+    }
+
+    .routine-steps {
+      padding-left: 18px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .routine-steps li {
+      margin-bottom: 5px;
+    }
+
+    .routine-tip {
+      font-size: 0.8rem;
+      color: #476756;
+      background: #EDF6F0;
+      padding: 7px 9px;
+      border-radius: 10px;
+      margin-top: 2px;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid rgba(155, 183, 162, 0.3);
+      background: rgba(228, 240, 231, 0.9);
+      padding: 14px 0 20px;
+      margin-top: 26px;
+    }
+
+    footer p {
+      font-size: 0.78rem;
+      text-align: center;
+      color: #4F6858;
+    }
+
+    /* ===== Responsive ===== */
+    @media (min-width: 720px) {
+      .routine-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        padding: 28px 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrapper header-inner">
+    <div class="logo-block">
+      <span class="logo-main">NowAuraa</span>
+      <span class="logo-sub">Routines · Glow Habits · Soft Skin</span>
+    </div>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="routines.html" class="nav-link active">Routines</a>
+      <a href="products.html" class="nav-link">Products</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrapper">
+  <section class="hero">
+    <span class="hero-pill">Glow plans for real life</span>
+    <h1>Skincare routines that actually fit your schedule.</h1>
+    <p>
+      No 15-step chaos. Just <span class="hero-highlight">intentional, 5-step routines</span> you can follow
+      on busy school days, long shifts, or slow self-care nights.
+    </p>
+    <div class="hero-actions">
+      <a href="#routines" class="btn btn-primary">Browse routines</a>
+      <a href="products.html" class="btn btn-ghost">See matching products</a>
+    </div>
+  </section>
+
+  <section id="routines">
+    <div class="section-header">
+      <h2>Routines for different moods & skin days.</h2>
+      <p>
+        Your skin changes with weather, hormones, stress, and sleep.
+        Choose the routine that feels right for how you’re living this week.
+      </p>
+    </div>
+
+    <div class="routine-grid">
+      <!-- Morning Glow -->
+      <article class="routine-card">
+        <div class="routine-icon">☀️</div>
+        <div class="routine-tag">Daytime · Glow</div>
+        <h3>Morning Glow Routine</h3>
+        <p class="routine-desc">
+          For mornings when you need to look awake in 10 minutes or less.
+        </p>
+        <ol class="routine-steps">
+          <li><strong>Gentle Cleanser</strong> – Remove sweat & oil from the night.</li>
+          <li><strong>Hydrating Toner / Essence</strong> – Press into damp skin for a soft plump look.</li>
+          <li><strong>Brightening Serum (Vitamin C / Niacinamide)</strong> – Support glow & dark spots.</li>
+          <li><strong>Lightweight Moisturizer</strong> – Gel or cream, whatever your skin loves.</li>
+          <li><strong>SPF 30+ (non-negotiable)</strong> – Final step, every morning.</li>
+        </ol>
+        <p class="routine-tip">
+          ✨ Shortcut days: Cleanser → Moisturizer → SPF. Three steps still count as self-care.
+        </p>
+      </article>
+
+      <!-- Night Reset -->
+      <article class="routine-card">
+        <div class="routine-icon">🌙</div>
+        <div class="routine-tag">Night · Reset</div>
+        <h3>Night Reset Routine</h3>
+        <p class="routine-desc">
+          For washing off makeup, SPF, and “I’m so tired” energy before bed.
+        </p>
+        <ol class="routine-steps">
+          <li><strong>Oil/Balm Cleanser</strong> – Melt SPF, makeup, pollution.</li>
+          <li><strong>Gentle Gel Cleanser</strong> – Fully clean skin without stripping it.</li>
+          <li><strong>Hydrating Serum or Essence</strong> – Add water back in.</li>
+          <li><strong>Treatment (Retinol / AHA / BHA)</strong> – Only 2–3 nights per week.</li>
+          <li><strong>Barrier Repair Moisturizer</strong> – Seal everything in, support your barrier.</li>
+        </ol>
+        <p class="routine-tip">
+          🌙 On exhausted nights, do step 2 + 5 only. Perfect routines are fake—consistent ones work.
+        </p>
+      </article>
+
+      <!-- Acne-Safe -->
+      <article class="routine-card">
+        <div class="routine-icon">💚</div>
+        <div class="routine-tag">Balanced · Acne-Safe</div>
+        <h3>Acne-Safe Calm Routine</h3>
+        <p class="routine-desc">
+          For breakout-prone skin that needs structure and kindness, not punishment.
+        </p>
+        <ol class="routine-steps">
+          <li><strong>Foaming or Gel Cleanser</strong> – No harsh scrubs, ever.</li>
+          <li><strong>Niacinamide Serum</strong> – Helps with oil, redness, and texture.</li>
+          <li><strong>Azelaic Acid / BHA</strong> – Use 2–3x per week or as a spot treatment.</li>
+          <li><strong>Oil-Free Moisturizer</strong> – Light but still hydrating.</li>
+          <li><strong>Non-Comedogenic SPF</strong> – Especially important with actives.</li>
+        </ol>
+        <p class="routine-tip">
+          💚 Introduce <strong>one new active at a time</strong>. If your skin feels angry, pull back.
+        </p>
+      </article>
+
+      <!-- Dry / Dehydrated -->
+      <article class="routine-card">
+        <div class="routine-icon">☁️</div>
+        <div class="routine-tag">Comfort · Dry & Dehydrated</div>
+        <h3>Cloud Skin Comfort Routine</h3>
+        <p class="routine-desc">
+          For tight, flaky, “my face drinks moisturizer” skin days.
+        </p>
+        <ol class="routine-steps">
+          <li><strong>Cream / Milk Cleanser</strong> – Clean without stripping.</li>
+          <li><strong>Mist or Hydrating Toner</strong> – Layer 2–3 times on damp skin.</li>
+          <li><strong>HA + Glycerin Serum</strong> – Trap water in, not out.</li>
+          <li><strong>Rich Moisturizer</strong> – Look for ceramides, squalane, shea, or oat.</li>
+          <li><strong>Hydrating SPF</strong> – Creamy sunscreen to seal hydration in daytime.</li>
+        </ol>
+        <p class="routine-tip">
+          ☁ Bonus: A humidifier + drinking water = your barrier’s favorite duo.
+        </p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrapper">
+    <p>NowAuraa © 2025 · Build routines that love you back, not drain you.</p>
+  </div>
+</footer>
+
+</body>
+</html>
 
 
 
